@@ -14,5 +14,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('questions.index');
 });
+Route::get('/perguntas', function () {
+    return view('questions.index');
+})->name('questions.index');
+Route::get('/dimensoes', function () {
+    return view('questions.index');
+})->name('dimensions.index');

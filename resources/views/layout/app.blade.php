@@ -8,8 +8,14 @@
     <title>Pulses Challenge</title>
 </head>
 <body>
-    <div id="app">
+    <div id="app" class="d-flex">
+        <sidebar :menu="[
+            { text: 'Perguntas', url: '/perguntas', active: false }, 
+            { text: 'Dimensões', url: '/dimensoes', active: false }]"
+        ></sidebar>
+
         @yield('content')
+
         <vue-toastr :session="{{ json_encode(session()->all()) }}"></vue-toastr>
     </div>
 

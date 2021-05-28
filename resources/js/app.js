@@ -8,6 +8,7 @@ Vue.use(VueToastr);
 
 // Global components
 Vue.component('vue-toastr', require('./components/Toastr.vue').default);
+Vue.component('sidebar', require('./components/layout/Sidebar.vue').default);
 
 const app = new Vue({
     el: '#app',

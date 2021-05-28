@@ -8,17 +8,20 @@
     <title>Pulses Challenge</title>
 </head>
 <body>
-    <div id="app" class="d-flex">
+    <div id="app" class="d-flex app-body">
         <sidebar :menu="[
-            { text: 'Perguntas', url: '/perguntas', active: false }, 
-            { text: 'Dimensões', url: '/dimensoes', active: false }]"
+            { text: 'Dimensões', url: '/dimensions', active: false },
+            { text: 'Perguntas', url: '/questions', active: false }]"
         ></sidebar>
 
-        @yield('content')
+        <div class="container mt-3">
+            @yield('content')
+        </div>
 
         <vue-toastr :session="{{ json_encode(session()->all()) }}"></vue-toastr>
     </div>
 
+    <script>window.csrfToken = '{{ csrf_token() }}';</script>
     <script src="/js/app.js"></script>
 </body>
 </html>

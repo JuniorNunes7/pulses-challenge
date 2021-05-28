@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DimensionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,12 +14,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('questions.index');
+Route::get('/', function() {
+    return redirect('/dimensions');
 });
-Route::get('/perguntas', function () {
-    return view('questions.index');
-})->name('questions.index');
-Route::get('/dimensoes', function () {
-    return view('questions.index');
-})->name('dimensions.index');
+
+// Dimensions
+Route::get('/dimensions/search', [DimensionController::class, 'search']);
+Route::resource('dimensions', DimensionController::class);

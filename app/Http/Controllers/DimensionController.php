@@ -1,0 +1,91 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Models\Dimension;
+use App\Http\Requests\DimensionRequest;
+use Illuminate\Http\Request;
+
+class DimensionController extends Controller
+{
+    /**
+     * Exibe a listagem de dimensões
+     *
+     * @return \Illuminate\Contracts\View\View
+     */
+    public function index()
+    {
+        return view('dimensions.index');
+    }
+
+    /**
+     * Pesquisa e pagina os registros de dimensões
+     *
+     * @return void
+     */
+    public function search()
+    {
+        return Dimension::orderBy('title')->paginate(10);
+    }
+
+    /**
+     * Exibe a página de criação de dimensões
+     *
+     * @return \Illuminate\Contracts\View\View
+     */
+    public function create()
+    {
+        return view('dimensions.create');
+    }
+
+    /**
+     * Cadastra uma nova dimensão no banco de dados.
+     *
+     * @param  DimensionRequest $request
+     * @return \Illuminate\Routing\Redirector
+     */
+    public function store(DimensionRequest $request)
+    {
+        $data = $request->only('title');
+        Dimension::create($data);
+
+        return redirect('/dimensions')->withSuccess('A dimensão foi adicionada com sucesso!');
+    }
+
+    /**
+     * Exibe a página para editar dimensões.
+     *
+     * @param  Dimension $dimension
+     * @return \Illuminate\Contracts\View\View
+     */
+    public function edit(Dimension $dimension)
+    {
+        return view('dimensions.edit', ['dimension' => $dimension]);
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  DimensionRequest $request
+     * @param  Dimension $dimension
+     * @return \Illuminate\Routing\Redirector
+     */
+    public function update(DimensionRequest $request, Dimension $dimension)
+    {
+        $data = $request->only('title');
+        $dimension->update($data);
+
+        return redirect('/dimensions')->withSuccess('A dimensão foi editada com sucesso!');
+    }
+
+    /**
+     * Remove uma dimensão
+     *
+     * @param  Dimension $dimension
+     * @return void
+     */
+    public function destroy(Dimension $dimension)
+    {
+        $dimension->delete();
+    }
+}

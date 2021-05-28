@@ -2,15 +2,14 @@
 <script>
 export default {
     props: ['session'],
-    created () {
+    mounted () {
         // Success Message
         if(_.has(this.session, 'success')) {
-            this.$toastr.s(this.session.success)
+            this.$toast.success(this.session.success)
         }
         // Error Message
         if(_.has(this.session, 'error')) {
-            console.log(this.$toastr);
-            this.$toastr.e(this.session.error)
+            this.$toast.error(this.session.error)
         }
     }
 }

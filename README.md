@@ -93,9 +93,8 @@ composer docker artisan <command>
 ```
 
 ## Links
+https://getcomposer.org/doc/00-intro.md
 
 https://laravel.com/docs
 
 https://docs.docker.com/compose/install
-
-https://travis-ci.com/

@@ -3,7 +3,6 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Validation\Rule;
 
 class QuestionRequest extends FormRequest
 {
@@ -36,5 +35,17 @@ class QuestionRequest extends FormRequest
         }
 
         return $rules;
+    }
+
+    /**
+     * Get custom attributes for validator errors.
+     *
+     * @return array
+     */
+    public function attributes()
+    {
+        return [
+            'dimension_id' => 'dimensão',
+        ];
     }
 }

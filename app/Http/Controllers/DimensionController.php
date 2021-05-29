@@ -85,6 +85,10 @@ class DimensionController extends Controller
      */
     public function destroy(Dimension $dimension)
     {
-        $dimension->delete();
+        if ($dimension->canDelete()) {
+            $dimension->delete();
+        } else {
+            abort(400, "Não é possível remover a dimensão. Existe pelo menos uma pergunta relacionada a ela.");
+        }
     }
 }

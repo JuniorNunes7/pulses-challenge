@@ -72,6 +72,7 @@ export default {
         },
 
         'filters.selectedDimension' (val) {
+            this.page = 1;
             this.getItems();
         }
     },

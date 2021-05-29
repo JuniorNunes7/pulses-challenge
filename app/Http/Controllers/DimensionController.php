@@ -4,12 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Models\Dimension;
 use App\Http\Requests\DimensionRequest;
-use Illuminate\Http\Request;
 
 class DimensionController extends Controller
 {
     /**
-     * Exibe a listagem de dimensões
+     * Exibe a listagem de dimensões.
      *
      * @return \Illuminate\Contracts\View\View
      */
@@ -19,7 +18,7 @@ class DimensionController extends Controller
     }
 
     /**
-     * Pesquisa e pagina os registros de dimensões
+     * Pesquisa e pagina os registros de dimensões.
      *
      * @return void
      */
@@ -29,7 +28,7 @@ class DimensionController extends Controller
     }
 
     /**
-     * Exibe a página de criação de dimensões
+     * Exibe a página de criação de dimensões.
      *
      * @return \Illuminate\Contracts\View\View
      */
@@ -39,7 +38,7 @@ class DimensionController extends Controller
     }
 
     /**
-     * Cadastra uma nova dimensão no banco de dados.
+     * Cadastra uma nova dimensão.
      *
      * @param  DimensionRequest $request
      * @return \Illuminate\Routing\Redirector
@@ -53,7 +52,7 @@ class DimensionController extends Controller
     }
 
     /**
-     * Exibe a página para editar dimensões.
+     * Exibe a página para editar a dimensão.
      *
      * @param  Dimension $dimension
      * @return \Illuminate\Contracts\View\View
@@ -64,7 +63,7 @@ class DimensionController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * Atualiza uma dimensão.
      *
      * @param  DimensionRequest $request
      * @param  Dimension $dimension

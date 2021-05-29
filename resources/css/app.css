@@ -1,0 +1,21 @@
+#sidebar {
+    font-family: 'Noto Sans', sans-serif;
+}
+
+.card-header h2 {
+    font-family: 'Open Sans', sans-serif;
+    text-transform: capitalize;
+}
+
+.pagination .sr-only {
+    display: none;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.clear-filters {
+    color: #039be5;
+    cursor: pointer;
+}

@@ -17,7 +17,7 @@
                 </tr>
             </tbody>
             <tbody v-else>
-                <h3>Nenhum registro encontrado!</h3>
+                <h3 class="text-center mt-4">Nenhum registro encontrado!</h3>
             </tbody>
         </table>
 
@@ -77,6 +77,7 @@ export default {
                         this.items = this.items.filter((it) => it.id !== item.id);
                     }).catch((error) => {
                         const errorMsg = _.get(error, 'response.data.message', 'Erro ao remover a dimensão.');
+                        Swal.fire('', errorMsg, 'error');
                     });
                 }
             });

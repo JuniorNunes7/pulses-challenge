@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\DimensionController;
+use App\Http\Controllers\{DimensionController, QuestionController};
 
 /*
 |--------------------------------------------------------------------------
@@ -21,3 +21,7 @@ Route::get('/', function() {
 // Dimensions
 Route::get('/dimensions/search', [DimensionController::class, 'search']);
 Route::resource('dimensions', DimensionController::class);
+
+// Questions
+Route::get('/questions/search', [QuestionController::class, 'search']);
+Route::resource('questions', QuestionController::class);

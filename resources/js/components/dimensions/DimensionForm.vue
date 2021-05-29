@@ -1,5 +1,5 @@
 <template>
-    <div class="row mt-5">
+    <div class="row">
         <div class="col-lg-6 col">
             <form :action="action" method="POST" class="needs-validation" novalidate>
                 <input type="hidden" name="_token" :value="csrfToken">

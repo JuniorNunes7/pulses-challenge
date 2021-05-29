@@ -2,9 +2,15 @@
 @import '~bootstrap/scss/bootstrap';
 
 // Font Awesome
-@import '~@fortawesome/fontawesome-free/scss/fontawesome';
-@import "~@fortawesome/fontawesome-free/scss/solid";
-@import "~@fortawesome/fontawesome-free/scss/brands";
+// @import '~@fortawesome/fontawesome-free/scss/fontawesome';
+// @import "~@fortawesome/fontawesome-free/scss/solid";
+// @import "~@fortawesome/fontawesome-free/scss/brands";
 
 // Toast
 @import '~vue-toast-notification/dist/theme-sugar.css';
+
+// Google Fonts
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&family=Open+Sans:wght@600&display=swap');
+
+// Custom CSS
+@import '../css/app.css';

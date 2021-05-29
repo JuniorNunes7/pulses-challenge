@@ -64,6 +64,9 @@ A aplicação ficaria disponível através do link: http://localhost:8000.
 ## Docker Setup
 
 Configure o arquivo .env seguindo as configurações do .env.example (para funcionar, basta copiar e colar o conteúdo).
+```sh
+$ cp .env.example .env && nano .env
+```
 
 Instale as dependências do PHP:
 ```sh
@@ -73,6 +76,11 @@ $ composer install
 Suba o container:
 ```sh
 composer docker up
+```
+
+Gera uma chave de aplicação:
+```sh
+$ composer docker artisan key:generate
 ```
 
 Rode as migrations e seeds:
